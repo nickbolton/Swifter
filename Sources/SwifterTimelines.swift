@@ -36,6 +36,7 @@ public extension Swifter {
         params["trim_user"] ??= trimUser
         params["contributor_details"] ??= contributorDetails
         params["include_entities"] ??= includeEntities
+        params["tweet_mode"] ??= "extended"
 
         self.getJSON(path: path, baseURL: .api, parameters: params, success: { json, _ in
             success?(json)

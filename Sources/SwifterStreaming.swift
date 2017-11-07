@@ -54,6 +54,7 @@ public extension Swifter {
         parameters["follow"] ??= follow?.joined(separator: ",")
         parameters["track"] ??= track?.joined(separator: ",")
         parameters["locations"] ??= locations?.joined(separator: ",")
+        parameters["tweet_mode"] ??= "extended"
 
         return self.postJSON(path: path, baseURL: .stream, parameters: parameters, downloadProgress: { json, _ in
             if let stallWarning = json["warning"].object {
